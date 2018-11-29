@@ -9,7 +9,7 @@
     "prepublish": "npm run compile",
     "pretest": "npm run compile",
     "test": "npm run test:lint && karma start karma.conf.js",
-    "compile": "rm -rf dist && ngc",
+    "compile": "IF EXIST dist (RMDIR /S /Q dist) & IF EXIST ngc (RMDIR /S /Q ngc)",
     "test:lint": "tslint -c tslint.json 'src/ngx-nvd3/ngx-nvd3.*.ts'"
   },
   "repository": {

@@ -122,8 +122,13 @@ export namespace Angular2NvD3 {
                 // Select the current element to add <svg> element and to render the chart in
                 this.svg = d3.select(this.el.nativeElement).append('svg');
                 if (h = options.chart.height) {
-                    if (!isNaN(+h)) { h += 'px'; }
-                    this.svg.attr('height', h).style({height: h});
+                    let h_tmp = h;
+                    if (!isNaN(+h)) {
+                        h += 'px';
+                        h_tmp += 50;
+                        h_tmp += 'px';
+                    }
+                    this.svg.attr('height', h).style({height: h_tmp});
                 }
                 if (w = options.chart.width) {
                     if (!isNaN(+w)) { w += 'px'; }
